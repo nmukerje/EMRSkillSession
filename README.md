@@ -89,6 +89,7 @@ Script Arguments: --r --julia --toree --torch --ruby --ds-packages --ml-packages
 
 ### Jupyter Pyspark Code
 
+```
 from pyspark.sql import SparkSession
 from  pyspark.sql import SQLContext
 
@@ -102,6 +103,7 @@ df.createOrReplaceTempView("nyc_trips")
 sql=SQLContext(spark)
 sql.cacheTable("nyc_trips")
 df.show()
+```
 
 Blog Post here: More Details here: https://aws.amazon.com/blogs/big-data/running-jupyter-notebook-and-jupyterhub-on-amazon-emr/
 
