@@ -2,6 +2,7 @@
 
 ## Hive schema:
 
+```
 create external table nyc_trips_pq 
 (
 vendor_name         string,                                  
@@ -23,9 +24,11 @@ LOCATION 's3://neilawspublic/dataset2/'
 tblproperties ("parquet.compress"="SNAPPY");
 
 msck repair table nyc_trips_pq;
+```
 
 ## Zeppelin Code:
 
+```
 %pyspark
 from pyspark.sql import SparkSession
 from  pyspark.sql import SQLContext
@@ -48,7 +51,7 @@ Select * from nyc_trips
 
 %sql
 Select * from nyc_trips
-
+```
 
 ## R-Studio:
 
@@ -61,6 +64,7 @@ Script Arguments:
 
 ### R Code
 
+```
 >> library(sparklyr)
 >> sc <- spark_connect(master = "yarn-client", version = "2.1.0")
 library(DBI)
@@ -71,6 +75,7 @@ geom_bar(width = 1, stat = "identity")
 >> pie <- bp + coord_polar("y", start=0)
 >> require(scales)
 >> pie + scale_y_continuous(labels = comma)
+```
 
 Blog Post here: More Details here: https://aws.amazon.com/blogs/big-data/running-sparklyr-rstudios-r-interface-to-spark-on-amazon-emr/
 
