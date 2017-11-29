@@ -1,8 +1,6 @@
 # EMRSkillSession
 
-##README.md
-
-Hive schema:
+## Hive schema:
 
 create external table nyc_trips_pq 
 (
@@ -26,7 +24,7 @@ tblproperties ("parquet.compress"="SNAPPY");
 
 msck repair table nyc_trips_pq;
 
-Zeppelin Code:
+## Zeppelin Code:
 
 %pyspark
 from pyspark.sql import SparkSession
@@ -52,7 +50,7 @@ Select * from nyc_trips
 Select * from nyc_trips
 
 
-R-Studio:
+## R-Studio:
 
 Script Location:s3://aws-bigdata-blog/artifacts/aws-blog-emr-rstudio-sparklyr/rstudio_sparklyr_emr5.sh
 
@@ -71,7 +69,9 @@ geom_bar(width = 1, stat = "identity")
 >> require(scales)
 >> pie + scale_y_continuous(labels = comma)
 
-Jupyter:
+Blog Post here: More Details here: https://aws.amazon.com/blogs/big-data/running-sparklyr-rstudios-r-interface-to-spark-on-amazon-emr/
+
+## Jupyter
 
 Script Location:s3://aws-bigdata-blog/artifacts/aws-blog-emr-jupyter/install-jupyter-emr5.sh
 
@@ -92,6 +92,9 @@ df.createOrReplaceTempView("nyc_trips")
 sql=SQLContext(spark)
 sql.cacheTable("nyc_trips")
 df.show()
+
+Blog Post here: More Details here: https://aws.amazon.com/blogs/big-data/running-jupyter-notebook-and-jupyterhub-on-amazon-emr/
+
 
 
 
