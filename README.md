@@ -52,6 +52,8 @@ Select * from nyc_trips
 
 ## R-Studio:
 
+EMR Launch Bootstrap:
+
 Script Location:s3://aws-bigdata-blog/artifacts/aws-blog-emr-rstudio-sparklyr/rstudio_sparklyr_emr5.sh
 
 Script Arguments:
@@ -73,11 +75,13 @@ Blog Post here: More Details here: https://aws.amazon.com/blogs/big-data/running
 
 ## Jupyter
 
+### EMR Launch Bootstrap:
+
 Script Location:s3://aws-bigdata-blog/artifacts/aws-blog-emr-jupyter/install-jupyter-emr5.sh
 
 Script Arguments: --r --julia --toree --torch --ruby --ds-packages --ml-packages --python-packages 'ggplot nilearn' --port 8880 --password jupyter --jupyterhub --jupyterhub-port 8001 --cached-install --notebook-dir,s3://neilawstemp/notebooks/ --copy-samples
 
-Jupyter Pyspark Code:
+### Jupyter Pyspark Code
 
 from pyspark.sql import SparkSession
 from  pyspark.sql import SQLContext
