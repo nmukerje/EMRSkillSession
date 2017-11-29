@@ -52,13 +52,14 @@ Select * from nyc_trips
 
 ## R-Studio:
 
-EMR Launch Bootstrap:
+### EMR Launch Bootstrap:
 
 Script Location:s3://aws-bigdata-blog/artifacts/aws-blog-emr-rstudio-sparklyr/rstudio_sparklyr_emr5.sh
 
 Script Arguments:
 --rstudio --shiny --sparkr --rexamples --plyrmr --rhdfs --sparklyr
 
+### R Code
 
 >> library(sparklyr)
 >> sc <- spark_connect(master = "yarn-client", version = "2.1.0")
